@@ -42,7 +42,7 @@ public class Projecte {
                 case 1:
                     if (!omplit) {
                         System.out.println("Introducció de dades:\n");
-                        System.out.println("Marca:");
+                        System.out.println("Marca:"); 
                         marca = entrada.skip("[\r\n]*").nextLine();
                         System.out.println("Model:");
                         model = entrada.skip("[\r\n]*").nextLine();
@@ -69,12 +69,36 @@ public class Projecte {
                     break;
 
                 case 2:
+                    if (omplit == true) {
+                        System.out.println("\nMarca:" + marca);
+                        System.out.println("Model:" + model);
+                        System.out.println("Tipus:" + tipus);
+                        System.out.println("Talla:" + talla);
+                        System.out.println("Polzades:" + polzades);
+                        System.out.println("Pes:" + pes);
+                        System.out.println("Extres (Si/No):" + extra);
+                        System.out.println("Preu:" + preu);
+                    } else {
+                        System.out.println("No hi han dades Introduïdes!");
+                    }
                     break;
 
                 case 3:
                     break;
 
                 case 4:
+                    if (omplit == true) {
+                        System.out.println("\nMarca:" + marca);
+                        System.out.println("Model:" + model);
+                        System.out.println("Tipus:" + tipus);
+                        System.out.println("Talla:" + talla);
+                        System.out.println("Polzades:" + polzades);
+                        System.out.println("Pes:" + pes);
+                        System.out.println("Extres (Si/No):" + extra);
+                        System.out.println("Preu:" + preu);
+                    } else {
+                        System.out.println("\nNo hi han dades Introduïdes!\n");
+                    }
                     break;
 
                 default:
