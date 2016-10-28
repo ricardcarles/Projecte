@@ -21,9 +21,9 @@ public class Projecte {
         Scanner entrada = new Scanner(System.in);
         int polzades = 0, pes = 0, menu;
         double preu = 0.0;
-        char talla = ' ';
+        char extra = ' ', talla = ' ';
         String marca = null, model = null, tipus = null;
-        boolean extres = false;
+        boolean extres = false, omplit = false;
 
         do {
             System.out.println("Menú de l'aplicació:\n");
@@ -40,6 +40,32 @@ public class Projecte {
                     break;
 
                 case 1:
+                    if (!omplit) {
+                        System.out.println("Introducció de dades:\n");
+                        System.out.println("Marca:");
+                        marca = entrada.skip("[\r\n]*").nextLine();
+                        System.out.println("Model:");
+                        model = entrada.skip("[\r\n]*").nextLine();
+                        System.out.println("Tipus:");
+                        tipus = entrada.skip("[\r\n]*").nextLine();
+                        System.out.println("Talla:");
+                        talla = entrada.skip("[\r\n]*").nextLine().charAt(0);
+                        System.out.println("Polzades:");
+                        polzades = entrada.skip("[\r\n]*").nextInt();
+                        System.out.println("Pes:");
+                        pes = entrada.skip("[\r\n]*").nextInt();
+                        System.out.println("Preu:");
+                        preu = entrada.skip("[\r\n]*").nextDouble();
+                        System.out.println("Extres (Si/No):");
+                        do {
+                            extra = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (extra != 'S' && extra != 'N');
+                        extres = (extra == 'S');
+
+                        omplit = true;
+                    } else {
+                        System.out.println("Ja has introduït dades, si vols omplir-lo esborra'l primer!");
+                    }
                     break;
 
                 case 2:
