@@ -21,7 +21,7 @@ public class Projecte {
         Scanner entrada = new Scanner(System.in);
         int polzades = 0, pes = 0, menu;
         double preu = 0.0;
-        char extra = ' ', talla = ' ';
+        char extra = ' ', talla = ' ', esS = ' ';
         String marca = null, model = null, tipus = null;
         boolean extres = false, omplit = false;
 
@@ -31,7 +31,7 @@ public class Projecte {
             System.out.println("1. Afegir Bicicleta:");
             System.out.println("2. Eliminar Bicicleta:");
             System.out.println("3. Modificar Bicicleta:");
-            System.out.println("4. Llistar Bicicleta:");
+            System.out.println("4. Llistar Bicicleta:\n");
             menu = entrada.nextInt();
 
             switch (menu) {
@@ -42,7 +42,7 @@ public class Projecte {
                 case 1:
                     if (!omplit) {
                         System.out.println("Introducció de dades:\n");
-                        System.out.println("Marca:"); 
+                        System.out.println("Marca:");
                         marca = entrada.skip("[\r\n]*").nextLine();
                         System.out.println("Model:");
                         model = entrada.skip("[\r\n]*").nextLine();
@@ -64,22 +64,38 @@ public class Projecte {
 
                         omplit = true;
                     } else {
-                        System.out.println("Ja has introduït dades, si vols omplir-lo esborra'l primer!");
+                        System.out.println("\nJa has introduït dades, si vols omplir-lo esborra'l primer!");
                     }
                     break;
 
                 case 2:
                     if (omplit == true) {
-                        System.out.println("\nMarca:" + marca);
-                        System.out.println("Model:" + model);
-                        System.out.println("Tipus:" + tipus);
-                        System.out.println("Talla:" + talla);
-                        System.out.println("Polzades:" + polzades);
-                        System.out.println("Pes:" + pes);
-                        System.out.println("Extres (Si/No):" + extra);
-                        System.out.println("Preu:" + preu);
+                        System.out.println("\nVols vore les dades? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("\nMarca:" + marca);
+                            System.out.println("Model:" + model);
+                            System.out.println("Tipus:" + tipus);
+                            System.out.println("Talla:" + talla);
+                            System.out.println("Polzades:" + polzades);
+                            System.out.println("Pes:" + pes);
+                            System.out.println("Extres (Si/No):" + extra);
+                            System.out.println("Preu:" + preu);
+                        }
+                        System.out.println("\nVols esborrar les dades? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            omplit = false; 
+                            System.out.println("\nDades esborrades correctament");
+                        }else {
+                            System.out.println("\nNo s'han esborrat les Dades");
+                        }
                     } else {
-                        System.out.println("No hi han dades Introduïdes!");
+                        System.out.println("\nNo hi han dades Introduïdes!");
                     }
                     break;
 
@@ -102,7 +118,7 @@ public class Projecte {
                     break;
 
                 default:
-                    System.out.println("Opció incorrecta!\n");
+                    System.out.println("\nOpció incorrecta!\n");
             }
         } while (!(menu == 0));
     }
