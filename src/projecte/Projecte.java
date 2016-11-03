@@ -55,7 +55,6 @@ public class Projecte {
                         System.out.println("Pes:");
                         pes = entrada.skip("[\r\n]*").nextInt();
                         System.out.println("Preu:");
-                        preu = entrada.skip("[\r\n]*").nextDouble();
                         System.out.println("Extres (Si/No):");
                         do {
                             extra = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
@@ -81,17 +80,17 @@ public class Projecte {
                             System.out.println("Talla:" + talla);
                             System.out.println("Polzades:" + polzades);
                             System.out.println("Pes:" + pes);
-                            System.out.println("Extres (Si/No):" + extra);
                             System.out.println("Preu:" + preu);
+                            System.out.println("Extres (Si/No):" + extra);
                         }
                         System.out.println("\nVols esborrar les dades? (Si/No)");
                         do {
                             esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
                         } while (esS != 'S' && esS != 'N');
                         if (esS == 'S') {
-                            omplit = false; 
+                            omplit = false;
                             System.out.println("\nDades esborrades correctament");
-                        }else {
+                        } else {
                             System.out.println("\nNo s'han esborrat les Dades");
                         }
                     } else {
@@ -100,6 +99,107 @@ public class Projecte {
                     break;
 
                 case 3:
+                    if (omplit == true) {
+                        System.out.println("\nVols vore les dades? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("\nMarca:" + marca);
+                            System.out.println("Model:" + model);
+                            System.out.println("Tipus:" + tipus);
+                            System.out.println("Talla:" + talla);
+                            System.out.println("Polzades:" + polzades);
+                            System.out.println("Pes:" + pes);
+                            System.out.println("Preu:" + preu);
+                            System.out.println("Extres (Si/No):" + extra);
+                        }
+                        System.out.println("\nVols Modificar les dades? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("\nMarca: " + marca);
+                        }
+                        System.out.println("\nVols canviar la Marca? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Marca: ");
+                            marca = entrada.skip("[\r\n]*").nextLine();
+                        }
+                        System.out.println("\nModel: " + model);
+                        System.out.println("\nVols canviar de Model? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Model: ");
+                            model = entrada.skip("[\r\n]*").nextLine();
+                        }
+                        System.out.println("\nTipus: " + tipus);
+                        System.out.println("\nVols canviar de Tipus? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Tipus: ");
+                            tipus = entrada.skip("[\r\n]*").nextLine();
+                        }
+                        System.out.println("\nTalla: " + talla);
+                        System.out.println("\nVols canviar de Talla? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Talla: ");
+                            talla = entrada.skip("[\r\n]*").nextLine().charAt(0);
+                        }
+                        System.out.println("\nPolzades: " + polzades);
+                        System.out.println("\nVols canviar de Polzades? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Polzades: ");
+                            polzades = entrada.skip("[\r\n]*").nextInt();
+                        }
+                        System.out.println("\nPes: " + pes);
+                        System.out.println("\nVols canviar de Pes? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Pes: ");
+                            pes = entrada.skip("[\r\n]*").nextInt();
+                        }
+                        System.out.println("\nPreu: " + preu);
+                        System.out.println("\nVols canviar el Preu? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Preu: ");
+                            preu = entrada.skip("[\r\n]*").nextDouble();
+                        }
+                        System.out.println("\nExtres (Si/No): " + extra);
+                        System.out.println("\nVols ficar Extres? (Si/No)");
+                        do {
+                            esS = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Extres: ");
+                            do {
+                                extra = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                            } while (extra != 'S' && extra != 'N');
+                            extres = (extra == 'S');
+
+                            omplit = true;
+                        }
+                    } else {
+                        System.out.println("\nNo hi han dades Introduïdes!");
+                    }
                     break;
 
                 case 4:
@@ -110,8 +210,8 @@ public class Projecte {
                         System.out.println("Talla:" + talla);
                         System.out.println("Polzades:" + polzades);
                         System.out.println("Pes:" + pes);
-                        System.out.println("Extres (Si/No):" + extra);
                         System.out.println("Preu:" + preu);
+                        System.out.println("Extres (Si/No):" + extra);
                     } else {
                         System.out.println("\nNo hi han dades Introduïdes!\n");
                     }
@@ -122,4 +222,5 @@ public class Projecte {
             }
         } while (!(menu == 0));
     }
+
 }
