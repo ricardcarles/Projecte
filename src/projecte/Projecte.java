@@ -55,6 +55,7 @@ public class Projecte {
                         System.out.println("Pes:");
                         pes = entrada.skip("[\r\n]*").nextInt();
                         System.out.println("Preu:");
+                        preu = entrada.skip("[\r\n]*").nextDouble();
                         System.out.println("Extres (Si/No):");
                         do {
                             extra = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
