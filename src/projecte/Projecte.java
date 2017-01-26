@@ -206,7 +206,7 @@ public class Projecte {
                             omplit = true;
                         }
                     } else {
-                        System.out.println("\nNo hi han dades Introduïdes!");
+                        System.out.println("\nNo hi han dades Introduïdes!\n");
                     }
                     break;
 
