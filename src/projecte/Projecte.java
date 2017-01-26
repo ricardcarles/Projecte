@@ -13,6 +13,13 @@ import java.util.Scanner;
  */
 public class Projecte {
 
+    
+    private static final int MAX_BICICLETES = 2;
+    //Array on guardarem la inforamació de les bicicletes
+    private static Bicicleta[] array = new Bicicleta[MAX_BICICLETES];
+    
+    
+
     /**
      * @param args the command line arguments
      */
