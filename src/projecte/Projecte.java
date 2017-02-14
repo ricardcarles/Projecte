@@ -13,12 +13,9 @@ import java.util.Scanner;
  */
 public class Projecte {
 
-    
     private static final int MAX_BICICLETES = 2;
     //Array on guardarem la inforamació de les bicicletes
     private static Bicicleta[] array = new Bicicleta[MAX_BICICLETES];
-    
-    
 
     /**
      * @param args the command line arguments
@@ -38,7 +35,8 @@ public class Projecte {
             System.out.println("1. Afegir Bicicleta:");
             System.out.println("2. Eliminar Bicicleta:");
             System.out.println("3. Modificar Bicicleta:");
-            System.out.println("4. Llistar Bicicleta:\n");
+            System.out.println("4. Llistar Bicicleta:");
+            System.out.println("5. Recuperar Bicicleta:\n");
             menu = entrada.nextInt();
 
             switch (menu) {
@@ -225,6 +223,36 @@ public class Projecte {
                     }
                     break;
 
+                case 5:
+                    if (!omplit) {
+
+                        char siNo;
+                        do {
+                            System.out.println("\nVols vore el Bici?(S/N):");
+                            siNo = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); 
+                        } while (siNo != 'S' && siNo != 'N');
+                        if (siNo == 'S') {
+                            System.out.println("\nMarca: " + marca);
+                            System.out.println("Model: " + model);
+                            System.out.println("Preu: " + preu);
+                        }
+
+                        do {
+                            System.out.println("\nVols recuperar la Bici?(S/N):");
+                            siNo = entrada.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); 
+                        } while (siNo != 'S' && siNo != 'N');
+                        if (siNo == 'S') {
+                            omplit = true;
+                            System.out.println("Bici recuperada correctament.");
+                        } else {
+                            System.out.println("La Bici no s'ha recuperat.");
+                        }
+
+                    } else {
+                        System.out.println("\nNo hi ha bicis per recuperar, si vols primer borra'n.");
+                    }
+
+                    break;
                 default:
                     System.out.println("\nOpció incorrecta!\n");
             }
